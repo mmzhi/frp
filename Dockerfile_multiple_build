@@ -9,6 +9,8 @@ RUN cd /go/src/github.com/fatedier/frp \
 
 FROM alpine:3.6
 
+VOLUME /etc/frp/
+
 COPY --from=frpBuild /go/src/github.com/fatedier/frp/bin/frps /
 COPY --from=frpBuild /go/src/github.com/fatedier/frp/conf/frps.ini /etc/frp/
 
